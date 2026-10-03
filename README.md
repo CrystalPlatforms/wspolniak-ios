@@ -6,7 +6,7 @@ iPhone + iPad).
 
 - **PRD**: [PRD.md](./PRD.md)
 - **Distribution**: Unlisted App Store (install via owner's invitation link)
-- **Status**: planning — implementation plan pending (`/carve`)
+- **Status**: planned — implementation plan in [plans/wspolniak-ios.md](./plans/wspolniak-ios.md), tracked as 13 issues (#2–#14) in [Issues](https://github.com/CrystalPlatforms/wspolniak-ios/issues/1)
 
 Related repositories:
 
