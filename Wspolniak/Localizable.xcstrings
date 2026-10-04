@@ -1,0 +1,200 @@
+{
+  "sourceLanguage" : "pl",
+  "strings" : {
+    "Albumy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumy"
+          }
+        }
+      }
+    },
+    "Biblioteka" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biblioteka"
+          }
+        }
+      }
+    },
+    "Chat" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chat"
+          }
+        }
+      }
+    },
+    "Chat AL" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chat AL"
+          }
+        }
+      }
+    },
+    "Feed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feed"
+          }
+        }
+      }
+    },
+    "Kalendarz" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalendarz"
+          }
+        }
+      }
+    },
+    "Statystyki" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statystyki"
+          }
+        }
+      }
+    },
+    "Ta sekcja powstanie w jednej z kolejnych faz." : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta sekcja powstanie w jednej z kolejnych faz."
+          }
+        }
+      }
+    },
+    "Tu będą albumy ze zdjęciami z okazji rodzinnych." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu będą albumy ze zdjęciami z okazji rodzinnych."
+          }
+        }
+      }
+    },
+    "Tu będą statystyki rodziny." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu będą statystyki rodziny."
+          }
+        }
+      }
+    },
+    "Tu będzie asystent AL — pomoc AI dla rodziny." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu będzie asystent AL — pomoc AI dla rodziny."
+          }
+        }
+      }
+    },
+    "Tu będzie czat rodzinny na żywo." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu będzie czat rodzinny na żywo."
+          }
+        }
+      }
+    },
+    "Tu będzie kalendarz rodzinny." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu będzie kalendarz rodzinny."
+          }
+        }
+      }
+    },
+    "Tu pojawi się kronika rodziny." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu pojawi się kronika rodziny."
+          }
+        }
+      }
+    },
+    "Tu zobaczysz wszystkie zdjęcia kiedykolwiek udostępnione przez rodzinę." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu zobaczysz wszystkie zdjęcia kiedykolwiek udostępnione przez rodzinę."
+          }
+        }
+      }
+    },
+    "Witaj w Wspólniaku" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Witaj w Wspólniaku"
+          }
+        }
+      }
+    },
+    "Wspólniak" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wspólniak"
+          }
+        }
+      }
+    },
+    "Wybierz sekcję z menu, aby zobaczyć treść." : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz sekcję z menu, aby zobaczyć treść."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

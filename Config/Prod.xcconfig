@@ -1,0 +1,4 @@
+// Wspólniak — konfiguracja PROD.
+// Bazowy URL instancji produkcyjnej. Prod gada WYŁĄCZNIE z prod instancją (PRD, story 35).
+// Uwaga: w xcconfig „//” zaczyna komentarz, więc „//” w URL-u piszemy jako „/$()/”.
+WSPOLNIAK_BASE_URL = https:/$()/wspolniak.com

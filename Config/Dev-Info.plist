@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WspolniakBaseURL</key>
+	<string>$(WSPOLNIAK_BASE_URL)</string>
+	<!-- Dev gada po HTTP z siecią lokalną — wyjątek ATS tylko dla dev. -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ABeeZee-Regular.ttf</string>
+		<string>ABeeZee-Italic.ttf</string>
+		<string>SourceSerif4-Variable.ttf</string>
+		<string>IBMPlexMono-Regular.ttf</string>
+	</array>
+</dict>
+</plist>
