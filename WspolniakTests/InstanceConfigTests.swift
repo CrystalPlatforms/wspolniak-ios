@@ -103,6 +103,7 @@ final class InstanceConfigTests: XCTestCase {
 // Granica systemowa: sztuczny URLProtocol zamiast prawdziwej sieci.
 enum StubResponse {
     case ok(Int, Data)
+    case okWithHeaders(Int, Data, [String: String])
     case failure(URLError)
 }
 
@@ -122,18 +123,26 @@ final class StubURLProtocol: URLProtocol {
         }
         switch handler(request) {
         case let .ok(status, data):
-            let response = HTTPURLResponse(
-                url: url,
-                statusCode: status,
-                httpVersion: nil,
-                headerFields: ["Content-Type": "application/json"]
-            )!
-            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            client?.urlProtocol(self, didLoad: data)
-            client?.urlProtocolDidFinishLoading(self)
+            respond(status: status, data: data, headers: ["Content-Type": "application/json"])
+        case let .okWithHeaders(status, data, headers):
+            var allHeaders = headers
+            allHeaders["Content-Type"] = allHeaders["Content-Type"] ?? "application/json"
+            respond(status: status, data: data, headers: allHeaders)
         case let .failure(error):
             client?.urlProtocol(self, didFailWithError: error)
         }
+    }
+
+    private func respond(status: Int, data: Data, headers: [String: String]) {
+        let response = HTTPURLResponse(
+            url: request.url!,
+            statusCode: status,
+            httpVersion: nil,
+            headerFields: headers
+        )!
+        client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        client?.urlProtocol(self, didLoad: data)
+        client?.urlProtocolDidFinishLoading(self)
     }
 
     nonisolated override func stopLoading() {}

@@ -3,9 +3,12 @@ import Foundation
 // Modele feedu — mirror PostWithAuthorAndImages + commentCount/pinned z web API
 // (src/db/posts/queries.ts, src/core/feed.ts). Backend = jedyne źródło prawdy;
 // tu tylko odwzorowanie kształtu JSON, zero logiki biznesowej.
+// Codable (od Fazy 3) — feed trafia też do cache offline na dysku (FeedCache).
 
 // Odpowiedź GET /api/app/posts — { data: [post], meta: { nextCursor, imageAccountHash } }.
 // Uwaga: feed nie siedzi w dodatkowej kopercie APIEnvelope — sam ją stanowi.
+// imageAccountHash bywa POMINIĘTY (dev bez zmiennej CLOUDFLARE_IMAGES_ACCOUNT_HASH
+// serializuje meta bez tego klucza) — więc opcjonalny z wartością domyślną.
 struct FeedPage: Decodable, Equatable {
     let posts: [Post]
     let nextCursor: FeedCursor?
@@ -21,7 +24,7 @@ struct FeedPage: Decodable, Equatable {
         posts = try container.decode([Post].self, forKey: .posts)
         let meta = try container.nestedContainer(keyedBy: MetaKeys.self, forKey: .meta)
         nextCursor = try meta.decodeIfPresent(FeedCursor.self, forKey: .nextCursor)
-        imageAccountHash = try meta.decode(String.self, forKey: .imageAccountHash)
+        imageAccountHash = try meta.decodeIfPresent(String.self, forKey: .imageAccountHash) ?? ""
     }
 
     private enum MetaKeys: String, CodingKey {
@@ -30,13 +33,16 @@ struct FeedPage: Decodable, Equatable {
     }
 }
 
-// Kursor paginacji — traktowany jako nieprzezroczysty (od falsz do Fazy 3).
-struct FeedCursor: Decodable, Equatable {
+// Kursor paginacji — traktowany jako nieprzezroczysty. W query web API leci
+// jako "<createdAt>_<id>" (posts.ts dzieli po ostatnim "_").
+struct FeedCursor: Codable, Equatable {
     let createdAt: String
     let id: String
+
+    var queryValue: String { "\(createdAt)_\(id)" }
 }
 
-struct Post: Decodable, Equatable {
+struct Post: Codable, Equatable, Identifiable {
     let id: String
     let authorId: String
     let description: String?
@@ -50,19 +56,19 @@ struct Post: Decodable, Equatable {
     let pinned: Bool?
 }
 
-struct Author: Decodable, Equatable {
+struct Author: Codable, Equatable {
     let id: String
     let name: String
 }
 
 // Wideo osadzone w poście (link YouTube) — kolumna JSONB `posts.videos`.
-struct PostVideo: Decodable, Equatable {
+struct PostVideo: Codable, Equatable {
     let youtubeVideoId: String
     let title: String
     let thumbnailUrl: URL
 }
 
-struct PostImage: Decodable, Equatable {
+struct PostImage: Codable, Equatable, Identifiable {
     let id: String
     let postId: String
     let cfImageId: String

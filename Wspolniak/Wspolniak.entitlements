@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Universal links (Faza 2): magic linki /app/u/<token> na wspolniak.com
+	     otwierają apkę. Walidacja AASA na urządzeniu — po mergu (issue #3). -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:wspolniak.com</string>
+	</array>
+</dict>
+</plist>

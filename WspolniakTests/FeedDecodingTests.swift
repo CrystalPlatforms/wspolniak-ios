@@ -9,9 +9,11 @@ import XCTest
 //   createdAt/updatedAt (ISO-8601 Z milisekundami z Drizzle), author{id,name},
 //   images[{id,postId,cfImageId,displayOrder,createdAt}], commentCount, pinned (tylko
 //   przypięte na 1. stronie — opcjonalne).
-// - nextCursor bywa null (ostatnia strona). Cursor traktujemy jako nieprzezroczysty.
+// - nextCursor bywa null (ostatnia strona). Cursor traktujemy jako nieprzezroczysty;
+//   w query leci jako "<createdAt>_<id>" (paginacja kursorowa webu, Faza 3).
 // - Uszkodzony/niekompletny JSON → APIError.decoding (nie	crash, nie surowy błąd).
-// - NIE testujemy tu: paginacji wysyłania kursora, UI feedu (Faza 3).
+// - NIE testujemy tu: logiki paginacji store'a i offline (FeedPaginationTests /
+//   FeedOfflineTests), UI feedu.
 
 final class FeedDecodingTests: XCTestCase {
 
@@ -61,6 +63,21 @@ final class FeedDecodingTests: XCTestCase {
         XCTAssertTrue(page.posts.isEmpty)
         XCTAssertNil(page.nextCursor)
         XCTAssertEqual(page.imageAccountHash, "hash")
+    }
+
+    // REGRESJA z HITL (dev instancja): bez zmiennej CLOUDFLARE_IMAGES_ACCOUNT_HASH
+    // backend wysyła meta BEZ klucza imageAccountHash — strona musi się dekodować.
+    func testFetchesFeedPageWithoutImageAccountHash() async throws {
+        StubURLProtocol.handler = { _ in
+            .ok(200, Data(#"{"data":[],"meta":{"nextCursor":{"createdAt":"2026-08-06T19:03:54.863Z","id":"be223aed"}}}"#.utf8))
+        }
+
+        let client = APIClient(baseURL: URL(string: "https://wspolniak.com")!, session: .stubbed)
+        let page = try await client.fetchFeed()
+
+        XCTAssertTrue(page.posts.isEmpty)
+        XCTAssertEqual(page.nextCursor?.id, "be223aed")
+        XCTAssertEqual(page.imageAccountHash, "", "Brak klucza = pusty hash, nie błąd dekodowania")
     }
 
     func testFetchesFeedWithoutOptionalFields() async throws {
@@ -118,6 +135,33 @@ final class FeedDecodingTests: XCTestCase {
         _ = try await client.fetchFeed()
 
         XCTAssertEqual(requestedPath, "/api/app/posts")
+    }
+
+    // Faza 3: paginacja kursorowa — kursor leci w query jako "<createdAt>_<id>"
+    // dokładnie w formacie, który posts.ts dzieli po ostatnim "_".
+    func testFetchFeedWithCursorSendsCursorQuery() async throws {
+        StubURLProtocol.handler = { _ in
+            .ok(200, Data(#"{"data":[],"meta":{"nextCursor":null,"imageAccountHash":"h"}}"#.utf8))
+        }
+        var requestedCursor: String?
+        StubURLProtocol.responseInspector = { request in
+            requestedCursor = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)?
+                .queryItems?
+                .first(where: { $0.name == "cursor" })?
+                .value
+        }
+
+        let client = APIClient(baseURL: URL(string: "https://wspolniak.com")!, session: .stubbed)
+        _ = try await client.fetchFeed(
+            cursor: FeedCursor(createdAt: "2026-08-15T18:30:00.123Z", id: "post-1")
+        )
+
+        XCTAssertEqual(requestedCursor, "2026-08-15T18:30:00.123Z_post-1")
+    }
+
+    func testCursorQueryValueMatchesWebFormat() {
+        let cursor = FeedCursor(createdAt: "2026-08-15T18:30:00.123Z", id: "post-1")
+        XCTAssertEqual(cursor.queryValue, "2026-08-15T18:30:00.123Z_post-1")
     }
 
     private static let isoFormatter: ISO8601DateFormatter = {

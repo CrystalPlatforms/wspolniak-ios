@@ -1,4 +1,7 @@
 // Wspólniak — konfiguracja DEV.
 // Bazowy URL instancji deweloperskiej (sieć lokalna, z wrangler.jsonc głównego repo).
+// UWAGA: IP Maca bierze z DHCP — gdy Wi-Fi/router zmieni podsieć (np. 192.168.9.x
+// → 192.168.50.x), zaktualizuj ten adres i przebuduj apkę. Aktualne IP sprawdzisz
+// komendą „ipconfig getifaddr en0".
 // Uwaga: w xcconfig „//” zaczyna komentarz, więc „//” w URL-u piszemy jako „/$()/”.
-WSPOLNIAK_BASE_URL = http:/$()/192.168.9.14:3000
+WSPOLNIAK_BASE_URL = http:/$()/192.168.50.164:3000

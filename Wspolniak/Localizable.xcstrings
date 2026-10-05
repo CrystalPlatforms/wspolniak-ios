@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "pl",
   "strings" : {
+    "%lld" : {
+
+    },
+    "+%lld więcej" : {
+
+    },
     "Albumy" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11,6 +17,9 @@
           }
         }
       }
+    },
+    "Anuluj" : {
+
     },
     "Biblioteka" : {
       "extractionState" : "stale",
@@ -45,8 +54,10 @@
         }
       }
     },
+    "Dalej" : {
+
+    },
     "Feed" : {
-      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -55,6 +66,12 @@
           }
         }
       }
+    },
+    "Filmik YouTube" : {
+
+    },
+    "https://…" : {
+
     },
     "Kalendarz" : {
       "extractionState" : "stale",
@@ -66,6 +83,51 @@
           }
         }
       }
+    },
+    "Kod rodzinny" : {
+
+    },
+    "Kronika jest jeszcze pusta." : {
+
+    },
+    "Kronika rodzinna dla najbliższych." : {
+
+    },
+    "Kto się loguje?" : {
+
+    },
+    "Logowanie" : {
+
+    },
+    "Loguję…" : {
+
+    },
+    "Masz link z zaproszenia? Wklej go tutaj albo po prostu kliknij go w Mailu — aplikacja zaloguje się sama." : {
+
+    },
+    "Nie udało się załadować kroniki" : {
+
+    },
+    "Offline — pokazuję zapisaną kronikę" : {
+
+    },
+    "Podaj kod rodzinny, który dostałeś od administratora." : {
+
+    },
+    "Ponów" : {
+
+    },
+    "Przypięty post" : {
+
+    },
+    "Rozpoznano kod administratora." : {
+
+    },
+    "Sprawdź połączenie z internetem i spróbuj ponownie." : {
+
+    },
+    "Sprawdzam kod…" : {
+
     },
     "Statystyki" : {
       "extractionState" : "stale",
@@ -87,6 +149,12 @@
           }
         }
       }
+    },
+    "To już cała kronika." : {
+
+    },
+    "To nie ja — wróć do kodu" : {
+
     },
     "Tu będą albumy ze zdjęciami z okazji rodzinnych." : {
       "extractionState" : "stale",
@@ -175,6 +243,9 @@
         }
       }
     },
+    "Wrócisz na ekran logowania, a sesja zniknie z tego urządzenia." : {
+
+    },
     "Wspólniak" : {
       "localizations" : {
         "pl" : {
@@ -194,6 +265,21 @@
           }
         }
       }
+    },
+    "Wylogować się?" : {
+
+    },
+    "Wyloguj się" : {
+
+    },
+    "Zaloguj jako administrator" : {
+
+    },
+    "Zaloguj linkiem" : {
+
+    },
+    "Zdjęcie %lld" : {
+
     }
   },
   "version" : "1.0"

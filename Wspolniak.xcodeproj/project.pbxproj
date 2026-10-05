@@ -17,32 +17,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B9E5CE930724282006A849C /* Wspolniak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wspolniak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9E5E0030724282006A849C /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		0B9E5E0130724282006A849C /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		0B9E5E0330724282006A849C /* WspolniakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WspolniakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B9E5CE930724282006A849C /* Wspolniak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wspolniak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0B9E5E0430724282006A849C /* WspolniakTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WspolniakTests;
-			sourceTree = "<group>";
-		};
 		0B9E5CEB30724282006A849C /* Wspolniak */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Wspolniak;
 			sourceTree = "<group>";
 		};
+		0B9E5E0430724282006A849C /* WspolniakTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WspolniakTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B9E5E0730724282006A849C /* Frameworks */ = {
+		0B9E5CE630724282006A849C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
 			);
 		};
-		0B9E5CE630724282006A849C /* Frameworks */ = {
+		0B9E5E0730724282006A849C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
 			);
@@ -50,15 +50,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B9E5E0230724282006A849C /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				0B9E5E0030724282006A849C /* Dev.xcconfig */,
-				0B9E5E0130724282006A849C /* Prod.xcconfig */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		0B9E5CE030724281006A849C = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +69,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0B9E5E0230724282006A849C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0B9E5E0030724282006A849C /* Dev.xcconfig */,
+				0B9E5E0130724282006A849C /* Prod.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0B9E5CE830724282006A849C /* Wspolniak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B9E5CF430724282006A849C /* Build configuration list for PBXNativeTarget "Wspolniak" */;
+			buildPhases = (
+				0B9E5CE530724282006A849C /* Sources */,
+				0B9E5CE630724282006A849C /* Frameworks */,
+				0B9E5CE730724282006A849C /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				0B9E5CEB30724282006A849C /* Wspolniak */,
+			);
+			name = Wspolniak;
+			productName = Wspolniak;
+			productReference = 0B9E5CE930724282006A849C /* Wspolniak.app */;
+			productType = "com.apple.product-type.application";
+		};
 		0B9E5E0530724282006A849C /* WspolniakTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B9E5E0B30724282006A849C /* Build configuration list for PBXNativeTarget "WspolniakTests" */;
@@ -98,31 +116,9 @@
 				0B9E5E0430724282006A849C /* WspolniakTests */,
 			);
 			name = WspolniakTests;
-			packageProductDependencies = (
-			);
 			productName = WspolniakTests;
 			productReference = 0B9E5E0330724282006A849C /* WspolniakTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0B9E5CE830724282006A849C /* Wspolniak */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B9E5CF430724282006A849C /* Build configuration list for PBXNativeTarget "Wspolniak" */;
-			buildPhases = (
-				0B9E5CE530724282006A849C /* Sources */,
-				0B9E5CE630724282006A849C /* Frameworks */,
-				0B9E5CE730724282006A849C /* Resources */,
-			);
-			buildRules = (
-			);
-			fileSystemSynchronizedGroups = (
-				0B9E5CEB30724282006A849C /* Wspolniak */,
-			);
-			name = Wspolniak;
-			packageProductDependencies = (
-			);
-			productName = Wspolniak;
-			productReference = 0B9E5CE930724282006A849C /* Wspolniak.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,12 +130,12 @@
 				LastSwiftUpdateCheck = 2700;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
+					0B9E5CE830724282006A849C = {
+						CreatedOnToolsVersion = 27.0;
+					};
 					0B9E5E0530724282006A849C = {
 						CreatedOnToolsVersion = 27.0;
 						TestTargetID = 0B9E5CE830724282006A849C;
-					};
-					0B9E5CE830724282006A849C = {
-						CreatedOnToolsVersion = 27.0;
 					};
 				};
 			};
@@ -165,12 +161,12 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0B9E5E0830724282006A849C /* Resources */ = {
+		0B9E5CE730724282006A849C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
 		};
-		0B9E5CE730724282006A849C /* Resources */ = {
+		0B9E5E0830724282006A849C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -178,12 +174,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B9E5E0630724282006A849C /* Sources */ = {
+		0B9E5CE530724282006A849C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
 			);
 		};
-		0B9E5CE530724282006A849C /* Sources */ = {
+		0B9E5E0630724282006A849C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
 			);
@@ -326,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Wspolniak/Wspolniak.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8W97P2J9GF;
@@ -361,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Wspolniak/Wspolniak.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8W97P2J9GF;
@@ -443,19 +441,19 @@
 			);
 			defaultConfigurationName = Dev;
 		};
-		0B9E5E0B30724282006A849C /* Build configuration list for PBXNativeTarget "WspolniakTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B9E5E0930724282006A849C /* Dev configuration for PBXNativeTarget "WspolniakTests" */,
-				0B9E5E0A30724282006A849C /* Prod configuration for PBXNativeTarget "WspolniakTests" */,
-			);
-			defaultConfigurationName = Dev;
-		};
 		0B9E5CF430724282006A849C /* Build configuration list for PBXNativeTarget "Wspolniak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B9E5CF530724282006A849C /* Dev configuration for PBXNativeTarget "Wspolniak" */,
 				0B9E5CF630724282006A849C /* Prod configuration for PBXNativeTarget "Wspolniak" */,
+			);
+			defaultConfigurationName = Dev;
+		};
+		0B9E5E0B30724282006A849C /* Build configuration list for PBXNativeTarget "WspolniakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B9E5E0930724282006A849C /* Dev configuration for PBXNativeTarget "WspolniakTests" */,
+				0B9E5E0A30724282006A849C /* Prod configuration for PBXNativeTarget "WspolniakTests" */,
 			);
 			defaultConfigurationName = Dev;
 		};
